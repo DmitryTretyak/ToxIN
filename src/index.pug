@@ -2,10 +2,33 @@ doctype html
 html(lang= 'ru')
   head
     meta(charset='utf-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(href=require('scss/style') rel='stylesheet')
     script(src=require('js/main') defer='defer')
-    title= 'Быстрый запуск Webpack'
+    title= 'UI kit'
   body
+    .conteiner
+        .block-name
+            h2 Colors and type
+        .wrapper
+            .colors
+                -
+                    var names = [
+                        'Dark Shade 100%',
+                        'Purple',
+                        'Green'
+                    ]
+                    var rgb = [
+                        '#1F2041',
+                        '#BC9CFF' ,
+                        '#6FCF97',
+                    ]
+                each color in [ 'colors__dark-shide_100', 'colors__dark-shide_75','colors__dark-shide_50','colors__dark-shide_25','colors__dark-shide_5','colors__purple','colors__green']
+                    .colors__item
+                        div(class='colors__square ' + color)
+                        .colors__discription
+                            h2 Dark Shade 100%
+                            p #1F2041
     p Смотри в консоль
         .logo-png
             img.logo1(src=require('./assets/img/image.png') alt='Загрузка PNG изображений с помощью Webpack')
