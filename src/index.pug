@@ -1,0 +1,11 @@
+doctype html
+html(lang= 'ru')
+  head
+    meta(charset='utf-8')
+    link(href=require('scss/style') rel='stylesheet')
+    script(src=require('js/main') defer='defer')
+    title= 'Быстрый запуск Webpack'
+  body
+    p Смотри в консоль
+        .logo-png
+            img.logo1(src=require('./assets/img/image.png') alt='Загрузка PNG изображений с помощью Webpack')

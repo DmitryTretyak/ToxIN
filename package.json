@@ -1,0 +1,35 @@
+{
+    "name": "webpack",
+    "version": "1.0.0",
+    "description": "Webpack config file",
+    "private": "true",
+    "scripts": {
+        "start": "cross-env NODE_ENV=development webpack-dev-server --mode development",
+        "dev": "cross-env NODE_ENV=development webpack --mode development",
+        "build": "cross-env NODE_ENV=production webpack --mode production",
+        "watch": "cross-env NODE_ENV=development webpack --mode development --watch"
+    },
+    "browserslist": "> 0.25%, not dead",
+    "keywords": [
+        "webpack",
+        "config",
+        "javascript",
+        "frontend"
+    ],
+    "author": "Tretyakov Dmitry",
+    "license": "ISC",
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "css-loader": "^6.8.1",
+        "css-minimizer-webpack-plugin": "^5.0.1",
+        "postcss-loader": "^7.3.3",
+        "postcss-preset-env": "^9.3.0",
+        "pug": "^3.0.2",
+        "pug-plugin": "^4.9.9",
+        "sass": "^1.69.5",
+        "sass-loader": "^13.3.2",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1"
+    }
+}

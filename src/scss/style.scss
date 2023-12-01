@@ -1,0 +1,222 @@
+@import "../css/font";
+// @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import "../css/normalize.css";
+
+:root {
+    --dark-100: rgba(31, 32, 65, 1);
+    --dark-75: rgba(31, 32, 65, 0.75);
+    --dark-50: rgba(31, 32, 65, 0.5);
+    --dark-25: rgba(31, 32, 65, 0.25);
+    --dark-5: rgba(31, 32, 65, 0.05);
+    --Primary-Color: #bc9cff;
+    --Secondary-Color: #6fcf97;
+}
+//Обьявим переменные
+$dark-100: rgba(31, 32, 65, 1);
+
+html,
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    font-family: "Montserrat", sans-serif;
+    color: var(--dark-75);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px; /* 171.429% */
+    background: #fff;
+}
+.conteiner {
+    max-width: 1440px;
+}
+
+.block-name {
+    padding: 50px 0;
+    text-align: center;
+    background: #7d7d7d;
+}
+
+.wrapper {
+    max-height: 900px;
+    display: flex;
+    justify-content: space-between;
+    padding: 145px;
+}
+
+h1 {
+    font-size: 24px;
+    color: var(--dark-100);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 19px;
+    color: var(--dark-100);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 12px;
+    color: var(--dark-100);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.colors {
+    margin-right: 415px;
+    &__item {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 20px;
+        flex-basis: content;
+    }
+    &__square {
+        width: 70px;
+        height: 70px;
+        margin-right: 40px;
+        flex-shrink: 0;
+        border-radius: 6px;
+    }
+
+    &__dark-shide {
+        &_100 {
+            background: var(--dark-100);
+        }
+        &_75 {
+            background: var(--dark-75);
+        }
+        &_50 {
+            background: var(--dark-50);
+        }
+        &_25 {
+            background: var(--dark-25);
+        }
+        &_5 {
+            background: var(--dark-5);
+        }
+    }
+    &__purple {
+        background: var(--Primary-Color);
+    }
+    &__green {
+        background: var(--Secondary-Color);
+    }
+    &__discription {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // как по другому убрать перенос текста не придумал
+        text-wrap: nowrap;
+        font-weight: 400;
+    }
+}
+
+.type {
+    &__item {
+        // display: grid;
+        // -ms-flex-align: start;
+        margin-bottom: 50px;
+    }
+    &__element {
+        // justify-self: flex-end;
+        color: var(--dark-25);
+        text-align: right;
+        margin-right: 30px;
+    }
+    .element-h1 {
+        font-size: 24px;
+    }
+
+    .element-h2 {
+        font-size: 19px;
+    }
+
+    .element-h3 {
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.form-item {
+    display: flex;
+}
+
+.text-field {
+    width: 320px;
+    height: 44px;
+    outline: none;
+    fill: #fff;
+    stroke-width: 1px;
+    stroke: rgba(var(--dark-25));
+    &::-webkit-input-placeholder {
+        color: var(--dark-25);
+        line-height: 18px; /* 128.571% */
+    }
+    &__focus {
+        outline: none;
+        border-radius: 4px;
+        border: 1px solid var(--dark-50);
+        background: #fff;
+    }
+}
+
+.dropdown {
+    width: 320px;
+    height: 44px;
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid var(--dark-25);
+    background: #fff;
+    &:hover .dropdown-content {
+        display: block;
+    }
+    a {
+        text-decoration: none;
+        &::after {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 0.255em;
+            vertical-align: 0.255em;
+            content: "";
+            border-top: 0.3em solid;
+            border-right: 0.3em solid transparent;
+            border-bottom: 0;
+            border-left: 0.3em solid transparent;
+        }
+    }
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
