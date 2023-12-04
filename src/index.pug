@@ -8,27 +8,66 @@ html(lang= 'ru')
     title= 'UI kit'
   body
     .conteiner
-        .block-name
-            h2 Colors and type
+        //- .block-name
+        //-     h2 Colors and type
         .wrapper
             .colors
                 -
-                    var names = [
-                        'Dark Shade 100%',
-                        'Purple',
-                        'Green'
-                    ]
-                    var rgb = [
-                        '#1F2041',
-                        '#BC9CFF' ,
-                        '#6FCF97',
-                    ]
-                each color in [ 'colors__dark-shide_100', 'colors__dark-shide_75','colors__dark-shide_50','colors__dark-shide_25','colors__dark-shide_5','colors__purple','colors__green']
-                    .colors__item
-                        div(class='colors__square ' + color)
+                    var colorUi = [{nameColor:'Dark Shade 100%', rgbColor:'#1F2041', classColor:'colors__dark-shide_100'},
+                    {nameColor:'Dark Shade 75%', rgbColor:'#1F2041', classColor:'colors__dark-shide_75'},
+                    {nameColor:'Dark Shade 50%', rgbColor:'#1F2041', classColor:'colors__dark-shide_50'},
+                    {nameColor:'Dark Shade 25%', rgbColor:'#1F2041', classColor:'colors__dark-shide_25'},
+                    {nameColor:'Dark Shade 5%', rgbColor:'#1F2041', classColor:'colors__dark-shide_5'},
+                    {nameColor:'Purple', rgbColor:'#BC9CFF', classColor:'colors__purple'},
+                    {nameColor:'Green', rgbColor:'#6FCF97', classColor:'colors__green'},]
+                each color in colorUi
+                    .colors__item.flex
+                        div(class='colors__square ' + color.classColor)
                         .colors__discription
-                            h2 Dark Shade 100%
-                            p #1F2041
-    p Смотри в консоль
-        .logo-png
-            img.logo1(src=require('./assets/img/image.png') alt='Загрузка PNG изображений с помощью Webpack')
+                            h2 #{color.nameColor}
+                                br
+                                span #{color.rgbColor}
+            .type.grid
+                -
+                    var types = [{typeText:'H1', typeClass:'h1', typeValue:'This one is the sub-section or widget title'},
+                    {typeText:'H2', typeClass:'h2', typeValue:'Next one is the item title inside widgets'},
+                    {typeText:'H3', typeClass:'h3', typeValue:'This is a label or CTA text'},
+                    {typeText:'Body',  typeClass:'p', typeValue:'This is the body text which is used for most of the design, like paragraphs, lists, etc.'},]
+                each item in types
+                    if item.typeClass !== 'p'
+
+                            #{item.typeClass}
+                                div(class='type__element') #{item.typeText}
+                            #{item.typeClass} #{item.typeValue}
+                    else
+
+                            div(class='type__element') #{item.typeText}
+                            #{item.typeClass} #{item.typeValue}
+        .block-name
+            h2 Form Elements
+        .wrapper
+            .column
+                .flex
+                    h3 Text Field
+                    span Default
+                    input(type="email"
+                    placeholder="Email"
+                    autocomplete="email"
+                    class="text-field text-field__default")
+
+                .form-item
+                    h3 Text Field
+                    span Default
+                    input(type="email"
+                    placeholder="Email"
+                    autocomplete="email"
+                    class="text-field text-field__focus"
+                    value="This is pretty awesome")
+
+                .form-item
+                    h3 Dropdown
+                    .dropdown
+                        a Сколько гостей
+                        .dropdown-content
+                            p Hello World!
+

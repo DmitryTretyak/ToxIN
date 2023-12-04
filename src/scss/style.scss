@@ -2,17 +2,14 @@
 // @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 @import "../css/normalize.css";
 
-:root {
-    --dark-100: rgba(31, 32, 65, 1);
-    --dark-75: rgba(31, 32, 65, 0.75);
-    --dark-50: rgba(31, 32, 65, 0.5);
-    --dark-25: rgba(31, 32, 65, 0.25);
-    --dark-5: rgba(31, 32, 65, 0.05);
-    --Primary-Color: #bc9cff;
-    --Secondary-Color: #6fcf97;
-}
 //Обьявим переменные
 $dark-100: rgba(31, 32, 65, 1);
+$dark-75: rgba(31, 32, 65, 0.75);
+$dark-50: rgba(31, 32, 65, 0.5);
+$dark-25: rgba(31, 32, 65, 0.25);
+$dark-5: rgba(31, 32, 65, 0.05);
+$Primary-Color: #bc9cff;
+$Secondary-Color: #6fcf97;
 
 html,
 * {
@@ -21,10 +18,37 @@ html,
     padding: 0;
 }
 
+body {
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    font-family: "Montserrat", sans-serif;
+    color: var(--dark-75);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 171.429% */
+    background: #fff;
+}
+
 h1,
 h2,
 h3 {
     margin: 0;
+    color: var(--dark-100);
+    font-weight: 700;
+    line-height: normal;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+h2 {
+    font-size: 1.1875rem;
+}
+h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
 }
 
 a {
@@ -32,19 +56,23 @@ a {
     color: inherit;
 }
 
-body {
-    margin: 0 auto;
-    max-width: 100%;
-    max-height: 100%;
-    font-family: "Montserrat", sans-serif;
-    color: var(--dark-75);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px; /* 171.429% */
-    background: #fff;
-}
 .conteiner {
     max-width: 1440px;
+}
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+}
+
+.wrapper {
+    max-height: 900px;
+    display: flex;
+    justify-content: space-between;
+    padding: 145px 150px;
 }
 
 .block-name {
@@ -53,39 +81,10 @@ body {
     background: #7d7d7d;
 }
 
-.wrapper {
-    max-height: 900px;
-    display: flex;
-    justify-content: space-between;
-    padding: 145px;
-}
-
-h1 {
-    font-size: 24px;
-    color: var(--dark-100);
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 19px;
-    color: var(--dark-100);
-    font-weight: 700;
-}
-
-h3 {
-    font-size: 12px;
-    color: var(--dark-100);
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
 .colors {
-    margin-right: 415px;
+    // margin-right: 415px;
     &__item {
-        display: flex;
-        flex-wrap: nowrap;
         margin-bottom: 20px;
-        flex-basis: content;
     }
     &__square {
         width: 70px;
@@ -97,70 +96,59 @@ h3 {
 
     &__dark-shide {
         &_100 {
-            background: var(--dark-100);
+            background: $dark-100;
         }
         &_75 {
-            background: var(--dark-75);
+            background: $dark-75;
         }
         &_50 {
-            background: var(--dark-50);
+            background: $dark-50;
         }
         &_25 {
-            background: var(--dark-25);
+            background: $dark-25;
         }
         &_5 {
-            background: var(--dark-5);
+            background: $dark-5;
         }
     }
     &__purple {
-        background: var(--Primary-Color);
+        background: $Primary-Color;
     }
     &__green {
-        background: var(--Secondary-Color);
+        background: $Secondary-Color;
     }
     &__discription {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        // как по другому убрать перенос текста не придумал
-        text-wrap: nowrap;
-        font-weight: 400;
+        word-wrap: break-word;
+        span {
+            display: inline-block;
+            font-weight: 400;
+            padding-top: 4px;
+        }
     }
 }
 
 .type {
-    &__item {
-        // display: grid;
-        // -ms-flex-align: start;
-        margin-bottom: 50px;
-    }
+    grid-template-columns: auto auto;
+    max-width: 436px;
+    max-height: 321px;
+    margin-right: 8px;
     &__element {
-        // justify-self: flex-end;
-        color: var(--dark-25);
+        color: $dark-25;
+        font-weight: 400;
         text-align: right;
         margin-right: 30px;
     }
-    .element-h1 {
-        font-size: 24px;
+    h1,
+    h2,
+    h3 {
+        margin-bottom: 50px;
     }
-
-    .element-h2 {
-        font-size: 19px;
+    p {
+        margin-right: 68px;
     }
-
-    .element-h3 {
-        font-size: 12px;
-        text-transform: uppercase;
-    }
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: auto auto;
-}
-
-.form-item {
-    display: flex;
 }
 
 .text-field {
