@@ -1,0 +1,57 @@
+mixin image(name, caption)
+  figure
+    img(src=name + ".jpg")
+    figcaption= caption
+
+mixin text-field(focus, val)
+    .form-item
+        if focus == 'hover / focus'
+            - focus = focus.toUpperCase()
+            label(for="email-input" class='flex form-description')
+                h3 Text Field
+                p.type-element #{focus}
+            input(
+            name='email-input'
+            type="email"
+            placeholder="Email"
+            autocomplete="email"
+            value= val
+            class="text-field text-field__focus"
+            )
+        else if focus == 'default'
+            - focus = focus.toUpperCase()
+            label(for="email-input" class='flex form-description')
+                h3 Text Field
+                p.type-element #{focus}
+            input(
+            type="email"
+            placeholder="Email"
+            autocomplete="email"
+            value= val
+            class="text-field"
+            )
+
+//- mixin dropdown
+//-     .form-item
+//-         label(for="dropdown" class='form-description')
+//-             h3 Dropdown
+//-         .dropdown
+//-             a Сколько гостей
+//-             .dropdown-content
+//-                 p Hello World!
+
+mixin dropdown
+    .form-item
+        label(for="dropdown" class='form-description')
+            h3 Dropdown
+        .form
+            input(type="checkbox" id="dropdown")
+            label(class="form__face" for="dropdown")
+                p.form__text Сколько гостей
+                .form__arrow
+            .form__items
+                li 1
+                li 2
+                li 3
+                li 4
+                li 5

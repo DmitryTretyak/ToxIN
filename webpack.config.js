@@ -40,6 +40,7 @@ module.exports = {
   plugins: [
     new PugPlugin({
       pretty: !isProd,
+      //   Format HTML (only in dev mode)
       js: {
         filename: `${shortFileName}.js`,
       },

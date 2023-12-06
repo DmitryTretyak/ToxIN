@@ -8,18 +8,18 @@ html(lang= 'ru')
     title= 'UI kit'
   body
     .conteiner
-        //- .block-name
-        //-     h2 Colors and type
-        .wrapper
+        //- .color-type
             .colors
                 -
-                    var colorUi = [{nameColor:'Dark Shade 100%', rgbColor:'#1F2041', classColor:'colors__dark-shide_100'},
+                    var colorUi = [
+                    {nameColor:'Dark Shade 100%', rgbColor:'#1F2041', classColor:'colors__dark-shide_100'},
                     {nameColor:'Dark Shade 75%', rgbColor:'#1F2041', classColor:'colors__dark-shide_75'},
                     {nameColor:'Dark Shade 50%', rgbColor:'#1F2041', classColor:'colors__dark-shide_50'},
                     {nameColor:'Dark Shade 25%', rgbColor:'#1F2041', classColor:'colors__dark-shide_25'},
                     {nameColor:'Dark Shade 5%', rgbColor:'#1F2041', classColor:'colors__dark-shide_5'},
                     {nameColor:'Purple', rgbColor:'#BC9CFF', classColor:'colors__purple'},
-                    {nameColor:'Green', rgbColor:'#6FCF97', classColor:'colors__green'},]
+                    {nameColor:'Green', rgbColor:'#6FCF97', classColor:'colors__green'},
+                    ]
                 each color in colorUi
                     .colors__item.flex
                         div(class='colors__square ' + color.classColor)
@@ -29,45 +29,27 @@ html(lang= 'ru')
                                 span #{color.rgbColor}
             .type.grid
                 -
-                    var types = [{typeText:'H1', typeClass:'h1', typeValue:'This one is the sub-section or widget title'},
+                    var types = [
+                    {typeText:'H1', typeClass:'h1', typeValue:'This one is the sub-section or widget title'},
                     {typeText:'H2', typeClass:'h2', typeValue:'Next one is the item title inside widgets'},
                     {typeText:'H3', typeClass:'h3', typeValue:'This is a label or CTA text'},
-                    {typeText:'Body',  typeClass:'p', typeValue:'This is the body text which is used for most of the design, like paragraphs, lists, etc.'},]
+                    {typeText:'Body',  typeClass:'p', typeValue:'This is the body text which is used for most of the design, like paragraphs, lists, etc.'},
+                    ]
                 each item in types
                     if item.typeClass !== 'p'
 
                             #{item.typeClass}
-                                div(class='type__element') #{item.typeText}
+                                div(class='type-element') #{item.typeText}
                             #{item.typeClass} #{item.typeValue}
                     else
 
-                            div(class='type__element') #{item.typeText}
+                            div(class='type-element') #{item.typeText}
                             #{item.typeClass} #{item.typeValue}
-        .block-name
-            h2 Form Elements
-        .wrapper
+        .form-elements
             .column
-                .flex
-                    h3 Text Field
-                    span Default
-                    input(type="email"
-                    placeholder="Email"
-                    autocomplete="email"
-                    class="text-field text-field__default")
+                include ./components/textField/textField
+                +text-field('default')
+                +text-field('hover / focus', "This is pretty awesome")
+                +dropdown
 
-                .form-item
-                    h3 Text Field
-                    span Default
-                    input(type="email"
-                    placeholder="Email"
-                    autocomplete="email"
-                    class="text-field text-field__focus"
-                    value="This is pretty awesome")
-
-                .form-item
-                    h3 Dropdown
-                    .dropdown
-                        a Сколько гостей
-                        .dropdown-content
-                            p Hello World!
 

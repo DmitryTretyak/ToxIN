@@ -9,86 +9,30 @@
   </head>
   <body>
     <div class="conteiner">
-      <div class="wrapper">
-        <div class="colors">
-          <div class="colors__item flex">
-            <div class="colors__square colors__dark-shide_100"></div>
-            <div class="colors__discription">
-              <h2>Dark Shade 100%<br><span>#1F2041</span></h2>
-            </div>
-          </div>
-          <div class="colors__item flex">
-            <div class="colors__square colors__dark-shide_75"></div>
-            <div class="colors__discription">
-              <h2>Dark Shade 75%<br><span>#1F2041</span></h2>
-            </div>
-          </div>
-          <div class="colors__item flex">
-            <div class="colors__square colors__dark-shide_50"></div>
-            <div class="colors__discription">
-              <h2>Dark Shade 50%<br><span>#1F2041</span></h2>
-            </div>
-          </div>
-          <div class="colors__item flex">
-            <div class="colors__square colors__dark-shide_25"></div>
-            <div class="colors__discription">
-              <h2>Dark Shade 25%<br><span>#1F2041</span></h2>
-            </div>
-          </div>
-          <div class="colors__item flex">
-            <div class="colors__square colors__dark-shide_5"></div>
-            <div class="colors__discription">
-              <h2>Dark Shade 5%<br><span>#1F2041</span></h2>
-            </div>
-          </div>
-          <div class="colors__item flex">
-            <div class="colors__square colors__purple"></div>
-            <div class="colors__discription">
-              <h2>Purple<br><span>#BC9CFF</span></h2>
-            </div>
-          </div>
-          <div class="colors__item flex">
-            <div class="colors__square colors__green"></div>
-            <div class="colors__discription">
-              <h2>Green<br><span>#6FCF97</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="type grid">
-          <h1>
-            <div class="type__element">H1</div>
-          </h1>
-          <h1>This one is the sub-section or widget title</h1>
-          <h2>
-            <div class="type__element">H2</div>
-          </h2>
-          <h2>Next one is the item title inside widgets</h2>
-          <h3>
-            <div class="type__element">H3</div>
-          </h3>
-          <h3>This is a label or CTA text</h3>
-          <div class="type__element">Body</div>
-          <p>This is the body text which is used for most of the design, like paragraphs, lists, etc.</p>
-        </div>
-      </div>
-      <div class="block-name">
-        <h2>Form Elements</h2>
-      </div>
-      <div class="wrapper">
+      <div class="form-elements">
         <div class="column">
-          <div class="flex">
-            <h3>Text Field</h3><span>Default</span><input class="text-field text-field__default" type="email"
-              placeholder="Email" autocomplete="email">
-          </div>
-          <div class="form-item">
-            <h3>Text Field</h3><span>Default</span><input class="text-field text-field__focus" type="email"
-              placeholder="Email" autocomplete="email" value="This is pretty awesome">
-          </div>
-          <div class="form-item">
-            <h3>Dropdown</h3>
-            <div class="dropdown"><a>Сколько гостей</a>
-              <div class="dropdown-content">
-                <p>Hello World!</p>
+          <div class="form-item"><label class="flex form-description" for="email-input">
+              <h3>Text Field</h3>
+              <p class="type-element">DEFAULT</p>
+            </label><input class="text-field" type="email" placeholder="Email" autocomplete="email"></div>
+          <div class="form-item"><label class="flex form-description" for="email-input">
+              <h3>Text Field</h3>
+              <p class="type-element">HOVER / FOCUS</p>
+            </label><input class="text-field text-field__focus" name="email-input" type="email" placeholder="Email"
+              autocomplete="email" value="This is pretty awesome"></div>
+          <div class="form-item"><label class="form-description" for="dropdown">
+              <h3>Dropdown</h3>
+            </label>
+            <div class="form"><input type="checkbox" id="dropdown"><label class="form__face" for="dropdown">
+                <p class="form__text">Сколько гостей</p>
+                <div class="form__arrow"></div>
+              </label>
+              <div class="form__items">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
               </div>
             </div>
           </div>
